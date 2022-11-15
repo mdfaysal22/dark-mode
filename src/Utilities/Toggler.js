@@ -3,12 +3,15 @@ import { DarkModeSwitch } from 'react-toggle-dark-mode';
 import useDarkMode from './useDarkMode';
 
 const Toggler = () => {
-    const [isDarkMode, setDarkMode] = useState(false);
     const [colorTheme, setTheme] = useDarkMode()
+    const [isDarkMode, setDarkMode] = useState(colorTheme === 'light' ? true : false);
+
+    console.log(isDarkMode);
 
     const toggleDarkMode = (checked) => {
         setTheme(colorTheme)
         setDarkMode(checked);
+       
     }
     return (
         <DarkModeSwitch
